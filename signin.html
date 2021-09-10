@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box-logo"
+    style="height: 100%; width: 500px; 
+    left: 0px; top: 0px; 
+    position: absolute;
+    background-color: #3db2ff;"
+    >
+        <img src="" alt="">
+    </div>
+
+    <div class="box-image">
+        <img src="" alt="">
+    </div>
+
+    <div class="box-form"
+    style="position: absolute;
+    width: 300px; height: 300px;
+    left: 900px; top: 220px;
+    
+    background-color: #F8F8F8;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px #000000;
+    border-radius: 32px;"
+    >
+        <form action="" method="POST">
+            <h1 align="center">Login</h1>
+            <ul style='list-style: none;'>
+                <li>
+                    <label for="email" name="email" style="display: block; margin-bottom: 5px;">Email: </label>
+                </li>
+                <li>
+                    <input type="email" name="email" id="email" style="display: block; margin-bottom: 15px;">
+                </li>
+                <li>
+                    <label for="password" style="display: block; margin-bottom: 5px;">Password: </label>
+                </li>
+                <li>
+                    <input type="password" name="password" id="password" style="display: block; margin-bottom: 20px;">
+                </li>
+                <li>
+                    <button type="submit" name="login" onclick="login()">Login</button>
+                </li>
+            </ul>
+            <p align="center"><a href="">Forgot password?</a></p>  
+        </form>
+    </div>
+    <div id="test"></div>
+    
+    <script>
+        function login() {
+            // if (str.length == 0) {
+            //     document.getElementById("txtHint").innerHTML = "";
+            //     return;
+            // } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("test").innerHTML = this.responseText;
+            }
+        // };
+          xmlhttp.open("POST", "php.php");
+          xmlhttp.send();
+        }
+      }
+    </script>
+    
+</body>
+</html>
