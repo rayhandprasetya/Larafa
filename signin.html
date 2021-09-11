@@ -8,6 +8,10 @@
 </head>
 
 <body>
+    <div id="error">
+        <h1>PAGE NOT FOUND 404!</h1>
+    </div>
+
     <div class="box-logo"
     style="height: 100%; width: 500px; 
     left: 0px; top: 0px; 
@@ -58,20 +62,21 @@
     
     <script>
         function login() {
-            // if (str.length == 0) {
-            //     document.getElementById("txtHint").innerHTML = "";
-            //     return;
-            // } else {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("test").innerHTML = this.responseText;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            // document.getElementById("test").innerHTML = this.responseText;
+                alert("ANDA BERHASIL LOGIN")
             }
-        // };
+            if (this.readyState == 0) {
+                if (this.status == 404) {
+                    document.getElementById('error').innerHTML = this.responseText;
+                }
+            }
+        };
           xmlhttp.open("POST", "php.php");
           xmlhttp.send();
         }
-      }
     </script>
     
 </body>

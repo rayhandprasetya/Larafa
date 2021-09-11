@@ -17,18 +17,28 @@ $user = [
         "password" => "fajar123"
     ]
 
-    ];
+];
 
-$email = $_POST['email'];
-$pass = $_POST['password'];
-$button = $_POST['login'];
+    // var_dump($user);
 
-    if (isset($email == "rayhand@gmail.com") && isset($pass == "rayhand123")) {
+
+
+
+    if (isset($_POST['login'])) {
+        $email = $_POST['email'];
+        $pass = $_POST['password'];
+        if ($email == $user[0]['email'] && $pass == $user[0]['password'] ) { 
+            # code...
+            header('index.html');
+        }
+        
+        elseif ($email == $user[1]['email'] && $pass == $user[1]['pass'] ) {
         header('index.html');
-    }
-    elseif (isset($email == "ardi@gmail.com") && isset($pass == "ardi123")) {
+        }
+
+        elseif ($email == $user[2]['email'] && $pass == $user[2]['pass']) {
         header('index.html');
+        }
     }
-    elseif (isset($email == "fajar@gmail.com") && isset($pass == "fajar123")) {
-        header('index.html');
-    }
+
+?>
