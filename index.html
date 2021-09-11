@@ -9,14 +9,69 @@
 <style>
     body {
         margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
-    nav {
-        top: 0;
+    
+    /* Navigasi Biru Atas */
+    /* nav, .logo, .hosp-name, .profile, .link {
         position: sticky;
-        height: 20vh;
+    } */
+    nav {
+        position: absolute;
+        width: 100vw;
+        height: 13vh;
+        left: 0px;
+        top: -2px;
+        background: #3DB2FF;
         
     }
+
+    nav .logo {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        left: 52px;
+        top: 16px;
+    }
+
+    nav .logo img {
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    nav .hosp-name {
+        position: absolute;
+        height: 47px;
+        left: 32%;
+        top: 5px;
+        box-sizing: ;
+    }
+
+    nav .hosp-name h1 {
+        background-color: azure;
+        width: 600px;
+        text-align: center;
+        border-radius: 32px;
+        font-size: 2em;
+    }
+
+    nav .link {
+        margin: auto;
+    }
+
+    nav .link ul {
+        
+    }
+
+    nav .link ul li a{
+        list-style-type: none;
+        text-decoration: none;
+        color: black;
+    }
+
+
+
+    
 
 </style>
 <body>
@@ -37,17 +92,32 @@
         <div class="logo">
             <img src="" alt="logo">
         </div>
+        
         <div class="hosp-name">
-            <h1>RUMAH SAKIT</h1>
+            <h1>RUMAH SAKIT SEJAHTERA</h1>
         </div>
-        <div class="profile">
-            <a href="http://" target="_blank" rel="noopener noreferrer"><img src="" alt=""></a>
+
+        <div class="profile"
+        style="
+        position: absolute;
+        right: 0; box-sizing: content-box;
+        padding: 10px 30px 0px 10px;">
+            <h1 style=
+            "color: red;
+            background-color: white;
+            width: 40px; height: 40px;
+            border-radius: 100px;
+            text-align: center;
+            ">A</h1>
+            <a href="http://" ><img src="" alt=""></a>
+
         </div>
+
         <div class="link">
-            <ul>
-                <li><a href="http://" target="_blank" rel="noopener noreferrer"></a></li>
-                <li><a href="http://" target="_blank" rel="noopener noreferrer"></a></li>
-                <li><a href="http://" target="_blank" rel="noopener noreferrer"></a></li>
+            <ul style='list-style: none;'>
+                <li><a href="http://" >Buat janji</a></li>
+                <li><a href="http://" >Daftar dokter</a></li>
+                <li><a href="http://" >Cabang</a></li>
             </ul>
         </div>
     </nav>
