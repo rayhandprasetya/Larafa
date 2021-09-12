@@ -43,7 +43,7 @@
                     <label for="email" name="email" style="display: block; margin-bottom: 5px;">Email: </label>
                 </li>
                 <li>
-                    <input type="email" name="email" id="email" style="display: block; margin-bottom: 15px;">
+                    <input type="email" placeholder="email" name="email" id="email" style="display: block; margin-bottom: 15px;">
                 </li>
                 <li>
                     <label for="password" style="display: block; margin-bottom: 5px;">Password: </label>
@@ -52,29 +52,31 @@
                     <input type="password" name="password" id="password" style="display: block; margin-bottom: 20px;">
                 </li>
                 <li>
-                    <button type="submit" name="login" onclick="login()">Login</button>
+                    <button type="submit" name="login" id="click" onclick="login()">Login</button>
                 </li>
             </ul>
             <p align="center"><a href="">Forgot password?</a></p>  
         </form>
     </div>
-    <div id="test"></div>
+    <div id="error"></div>
     
     <script>
         function login() {
+            var email = document.getElementById("email").value;
+	        var password = document.getElementById("password").value;
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             // document.getElementById("test").innerHTML = this.responseText;
                 alert("ANDA BERHASIL LOGIN")
             }
             if (this.readyState == 0) {
                 if (this.status == 404) {
-                    document.getElementById('error').innerHTML = this.responseText;
+                    document.getElementById("error").innerHTML = this.responseText;
                 }
             }
         };
-          xmlhttp.open("POST", "php.php");
+          xmlhttp.open("POST", "php.php?email="+email+"&password="+password, true);
           xmlhttp.send();
         }
     </script>
