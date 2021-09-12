@@ -62,23 +62,21 @@
     
     <script>
         function login() {
-            var email = document.getElementById("email").value;
-	        var password = document.getElementById("password").value;
+            var email = document.getElementById('email').value;
+            var pass = document.getElementById('password').value;
+
             var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.open("POST", "php.php");
+            xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
             xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            // document.getElementById("test").innerHTML = this.responseText;
-                alert("ANDA BERHASIL LOGIN")
-            }
-            if (this.readyState == 0) {
-                if (this.status == 404) {
-                    document.getElementById("error").innerHTML = this.responseText;
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(xmlhttp);
                 }
-            }
-        };
-          xmlhttp.open("POST", "php.php?email="+email+"&password="+password, true);
-          xmlhttp.send();
-        }
+            };
+        xmlhttp.send("email = " + email + "pass = " + pass);
+	}
     </script>
     
 </body>
