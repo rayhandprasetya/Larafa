@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<title>
+
+</title>
+
+<body>
+<form action="" method="GET">
+    <select name="doctor" onchange="showDoctor()">
+        <option value="">Select a Doctor:</option>
+        <option value="fajar" name="fajar">Dr. Fajar</option>
+        <option value="ardi" name="ardi">Dr. Lazuardi</option>
+        <option value="rayhand" name="rayhand">Dr. Rayhand</option>
+    </select>
+</form>
+<br>
+<div>The Doctor's info will be show under here!</div>
+<div id="infodoctor">
+</body>
+
+<script>
+    function showDoctor() {
+        var x = new XMLHttpRequest();   
+        x.onreadystatechange=function() {
+            if(x.readyState == 4 && x.status == 200) {
+                document.getElementById('infodoctor').innerHTML = x.responseText;
+            }
+        }
+        x.open("GET", "doclist.php", true);
+        x.send();
+    }
+    // function showDoctor(doctor) {
+    //     if (doctor == "") {
+    //         document.getElementById("infodoctor").innerHTML = "";
+    //         return;
+    //     }
+    //     var xrt = new XMLHttpRequest();
+    //     xrt.onload = function() {
+    //         document.getElementById("infodoctor").innerHTML = this.responseText;            
+    //     }
+    //     xrt.open("GET", "doclist.php?doctor=" + doctor);
+    //     xrt.send();
+    // }
+</script>
+</html>
